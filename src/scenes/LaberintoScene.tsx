@@ -24,7 +24,7 @@ export const LaberintoScene: React.FC = () => {
     playAmbient()
     setTimeout(() => {
       useGameStore.getState().showMessage(
-        'W/S avanzar · A/D rotar · ESPACIO disparar · R recargar · E interactuar'
+        'W/S move · A/D rotate · SPACE shoot · R reload · E interact'
       )
     }, 1500)
   }, [])
@@ -124,9 +124,9 @@ export const LaberintoScene: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
 
-      {/* Título */}
+      {/* Title */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 text-red-500 text-xs font-mono z-20 tracking-widest">
-        LABERINTO — NIVEL {p.mapLevel}
+        MAZE — LEVEL {p.mapLevel}
       </div>
 
       {/* Stats */}
@@ -161,9 +161,9 @@ export const LaberintoScene: React.FC = () => {
         <div className="text-purple-400">💀 {p.kills} kills</div>
       </div>
 
-      {/* Inventario */}
+      {/* Inventory */}
       <div className="absolute top-12 right-4 bg-black/75 border border-red-900/50 p-3 rounded-lg text-xs font-mono z-20 max-w-[160px]">
-        <div className="text-gray-500 mb-1 tracking-widest">INVENTARIO</div>
+        <div className="text-gray-500 mb-1 tracking-widest">INVENTORY</div>
         {p.inventory.map((item, i) => (
           <div key={i} className="text-gray-300 truncate">{item}</div>
         ))}
@@ -200,7 +200,7 @@ export const LaberintoScene: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Diálogo inicial */}
+      {/* Initial Dialogue */}
       <AnimatePresence>
         {showDialogue && (
           <motion.div
@@ -210,15 +210,15 @@ export const LaberintoScene: React.FC = () => {
             className="absolute bottom-24 left-1/2 -translate-x-1/2 bg-black/90 border border-red-900 p-4 rounded-lg max-w-sm text-center z-20 pointer-events-none"
           >
             <p className="text-red-400 text-sm font-mono leading-relaxed">
-              "Despiertas en un lugar desconocido..."<br />
-              "Algo te observa en la oscuridad..."<br />
-              <span className="text-yellow-400">W/S avanzar · A/D rotar</span>
+              "You wake up in an unknown place..."<br />
+              "Something is watching you in the darkness..."<br />
+              <span className="text-yellow-400">W/S move · A/D rotate</span>
             </p>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Advertencia cordura */}
+      {/* Sanity Warning */}
       <AnimatePresence>
         {p.sanity < 30 && (
           <motion.div
@@ -227,18 +227,18 @@ export const LaberintoScene: React.FC = () => {
             exit={{ opacity: 0 }}
             className="absolute bottom-24 left-1/2 -translate-x-1/2 text-red-500 text-xs font-mono animate-pulse z-20 tracking-widest pointer-events-none"
           >
-            ⚠ ESTÁS PERDIENDO LA CORDURA ⚠
+            ⚠ YOU ARE LOSING SANITY ⚠
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Controles */}
+      {/* Controls */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 border border-gray-800 px-4 py-2 rounded-lg text-white text-xs font-mono z-20 flex gap-3 pointer-events-none">
-        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">W/S</kbd> Avanzar</span>
-        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">A/D</kbd> Rotar</span>
-        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">SPC</kbd> Disparar</span>
-        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">R</kbd> Recargar</span>
-        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">E</kbd> Interactuar</span>
+        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">W/S</kbd> Move</span>
+        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">A/D</kbd> Rotate</span>
+        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">SPC</kbd> Shoot</span>
+        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">R</kbd> Reload</span>
+        <span><kbd className="px-1.5 py-0.5 bg-gray-800 rounded">E</kbd> Interact</span>
       </div>
 
     </div>
