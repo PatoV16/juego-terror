@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useGameStore } from '../store/gameSlice'
 import { useAudio } from '../hooks/useAudio'
 import { motion, AnimatePresence } from 'framer-motion'
-import { GameCanvas, MAP } from '../engine/GameCanvas'
+import {  MAP } from '../engine/GameCanvas'
 
 export const LaberintoScene: React.FC = () => {
-  const { playFootstep, playAmbient, playGunshot, playWhisper, playReload } = useAudio()
+  const { playFootstep, playAmbient, playGunshot, playWhisper,  } = useAudio()
 
   const keysRef     = useRef({ w: false, s: false, a: false, d: false, q: false })
   const lastShotRef = useRef(0)

@@ -1,12 +1,12 @@
-import { useEffect, useRef } from 'react'
+import {  useRef } from 'react'
 import { Howl } from 'howler'
 
-const createMockHowl = () => ({
-  play: () => console.log('🔊 Sonido reproducido (mock)'),
-  stop: () => {},
-  loop: () => {},
-  volume: () => {}
-}) as any
+// const createMockHowl = () => ({
+//   play: () => console.log('🔊 Sonido reproducido (mock)'),
+//   stop: () => {},
+//   loop: () => {},
+//   volume: () => {}
+// }) as any
 
 
 const sounds = {

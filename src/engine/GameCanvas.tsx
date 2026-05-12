@@ -23,11 +23,11 @@ export const MAP = [
 ]
 
 // Colores para paredes
-const WALL_COLORS = {
-  normal: '#4a2a2a',
-  dark: '#2a1515',
-  blood: '#5c1a1a',
-}
+// const WALL_COLORS = {
+//   normal: '#4a2a2a',
+//   dark: '#2a1515',
+//   blood: '#5c1a1a',
+// }
 
 interface GameCanvasProps {
   width?: number
